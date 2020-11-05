@@ -214,7 +214,7 @@ export class Toaster extends AbstractPureComponent2<IToasterProps, IToasterState
     }
 
     private dismissIfAtLimit() {
-        if (this.state.toasts.length > this.props.maxToasts) {
+        if (this.state.toasts.length > !!this.props.maxToasts) {
             // dismiss the oldest toast to stay within the maxToasts limit
             this.dismiss(this.state.toasts[this.state.toasts.length - 1].key!);
         }
